@@ -1,4 +1,4 @@
-package lesson1_20230307;
+package classworks.lesson1_20230307;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class Main {
 
     //=====================================
     //Formula NOD(a,b)
-    System.out.println(gcd(48, 8));
+//    System.out.println(gcd(48, 8));
   }
 
   private static int gcd(int a, int b){
