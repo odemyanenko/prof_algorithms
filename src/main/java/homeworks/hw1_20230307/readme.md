@@ -1,11 +1,11 @@
-Описание задания.
+####Описание задания.
 1. Palindrome Number
    Given an integer x, return true if x is a palindrome, and false otherwise.
 
 2. Find the element that appears once in a sorted array
    Given a sorted array in which all elements occur twice (one after the other) and one element appears only once.
 
-Decision Algorithms.
+####Decision Algorithms.
 1. (1) Mit StringBuilder
 `
 start
