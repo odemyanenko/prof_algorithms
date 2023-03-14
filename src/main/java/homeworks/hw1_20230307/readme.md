@@ -1,13 +1,15 @@
-Описание задания.
+Tasks
+----------------
 1. Palindrome Number
    Given an integer x, return true if x is a palindrome, and false otherwise.
 
 2. Find the element that appears once in a sorted array
    Given a sorted array in which all elements occur twice (one after the other) and one element appears only once.
 
-Decision Algorithms.
+Decision Algorithms
+-------------
 1. (1) Mit StringBuilder
-`
+```
 start
 Number input: a
 
@@ -18,9 +20,10 @@ if (StringBuilder = numberString) true
 else false
 
 print isPalidrome
-end`
+end
+```
 2. (1) Mit Char Array
-`
+```
 start
 Number input: a
 
@@ -34,10 +37,11 @@ i++ and j--
 end while exit from method with TRUE
 
 print isPalidrome
-end`
+end
+```
 
 3. (2) Find one Number in SortArray
-`
+```
 start
 Sorted Array init: sortArray
 
@@ -52,4 +56,4 @@ declare indexElement = RESULT METHOD
 if (==-1) print "No found"
 else print "Found number=N"
 end
-`
+```
