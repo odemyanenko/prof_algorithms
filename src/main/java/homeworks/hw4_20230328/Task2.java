@@ -31,26 +31,23 @@ public class Task2 {
     if (array.length == 0) {
       return -1;
     }
-    int peakElem = -1;
     for (int i = 0; i < array.length; i++) {
       for (int j = 0; j < array.length; j++) {
         if (
-                ((j == 0) && (array[i][j] >= array[i][j + 1])) ||
-                ((j == array.length - 1) && (array[i][j] >= array[i][j - 1])) ||
-                ((j > 0 && j < array.length - 1) && (array[i][j] >= array[i][j - 1]) && (array[i][j] >= array[i][j + 1])) ||
+                (((j == 0) && (array[i][j] >= array[i][j + 1])) ||
+                        ((j == array.length - 1) && (array[i][j] >= array[i][j - 1])) ||
+                        ((j > 0 && j < array.length - 1) && (array[i][j] >= array[i][j - 1]) && (array[i][j] >= array[i][j + 1]))) &&
 
-                ((i == 0) && (array[i][j] >= array[i + 1][j])) ||
-                ((i == array.length - 1) && (array[i-1][j] >= array[i][j])) ||
-                ((i > 0 && i < array.length - 1) && (array[i-1][j] >= array[i][j]) && (array[i+1][j] >= array[i][j]))
+                        (((i == 0) && (array[i][j] >= array[i + 1][j])) ||
+                                ((i == array.length - 1) && (array[i][j] >= array[i - 1][j])) ||
+                                ((i > 0 && i < array.length - 1) && (array[i][j] >= array[i - 1][j]) && (array[i][j] >= array[i + 1][j])))
 
         ) {
-          if (peakElem < array[i][j]) {
-            peakElem =  array[i][j];
+            return array[i][j];
           }
         }
       }
-    }
-    return peakElem;
+    return -1;
   }
 
   private static void printArray(int[][] array) {
