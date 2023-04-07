@@ -25,6 +25,50 @@ public class Task2 {
     int peakElement = getPeakElement(array);
     System.out.println("Peak element: " + peakElement);
 
+    System.out.println("----------------");
+    task2(array);
+
+  }
+
+  private static void task2(int[][] array) {
+    int n = array.length;
+    int m = array[0].length;
+    int[][] table = new int[n + 2][m + 2];
+
+    int min = array[0][0];
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        if (array[i][j] < min) {
+          min = array[i][j];
+        }
+      }
+    }
+    min /= 10;
+    for (int i = 0; i < n + 2; i++) {
+      table[i][0] = min;
+      table[i][m + 1] = min;
+    }
+    for (int j = 0; j < m + 2; j++) {
+      table[0][j] = min;
+      table[n + 1][j] = min;
+    }
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        table[i + 1][j + 1] = array[i][j];
+      }
+    }
+    printArray(table);
+    for (int i = 1; i < n + 1; i++) {
+      for (int j = 1; j < m + 1; j++) {
+        if (table[i][j] >= table[i - 1][j] &&
+                table[i][j] >= table[i + 1][j] &&
+                table[i][j] >= table[i][j - 1] &&
+                table[i][j] >= table[i][j + 1]
+        ){
+          System.out.println(table[i][j]);
+        }
+      }
+    }
   }
 
   private static int getPeakElement(int[][] array) {
@@ -36,17 +80,17 @@ public class Task2 {
         if (
                 (((j == 0) && (array[i][j] >= array[i][j + 1])) ||
                         ((j == array.length - 1) && (array[i][j] >= array[i][j - 1])) ||
-                        ((j > 0 && j < array.length - 1) && (array[i][j] >= array[i][j - 1]) && (array[i][j] >= array[i][j + 1]))) &&
-
+                        ((j > 0 && j < array.length - 1) && (array[i][j] >= array[i][j - 1]) && (array[i][j] >= array[i][j + 1])))
+                        &&
                         (((i == 0) && (array[i][j] >= array[i + 1][j])) ||
                                 ((i == array.length - 1) && (array[i][j] >= array[i - 1][j])) ||
                                 ((i > 0 && i < array.length - 1) && (array[i][j] >= array[i - 1][j]) && (array[i][j] >= array[i + 1][j])))
 
         ) {
-            return array[i][j];
-          }
+          return array[i][j];
         }
       }
+    }
     return -1;
   }
 

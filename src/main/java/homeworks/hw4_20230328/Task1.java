@@ -18,16 +18,22 @@ public class Task1 {
     System.out.println("Enter please 1-number (n):");
     int n = scanner.nextInt();
 
+    System.out.println("0) x^n = " + getPowerIter(x, n));
     System.out.println("1) O(n) x^n = " + getPower1(x, n));
     System.out.println("2) (log n) x^n = " + getPower2(x, n));
+  }
+
+  private static int getPowerIter(int x, int n) {
+    int p = 1;
+    for (int i = 0; i < n; i++) {
+      p = p * x;
+    }
+    return p;
   }
 
   private static int getPower1(int x, int n) {
     if (n == 0) {
       return 1;
-    }
-    if (n == 1) {
-      return x;
     }
     return x * getPower1(x, n - 1);
   }
@@ -36,9 +42,6 @@ public class Task1 {
     //  when n is even, using x^n = (x^(n/2))^2."
     if (n == 0) {
       return 1;
-    }
-    if (n == 1) {
-      return x;
     }
     if (n % 2 == 0) {
       return getPower2(x * x, n / 2);
