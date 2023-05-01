@@ -1,7 +1,6 @@
-package homeworks.hw6_20230426;
+package homeworks.hw6_20230418;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
