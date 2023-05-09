@@ -23,7 +23,7 @@ public class Main {
       array[1][j] = 1;
     }
     for (int i = 2; i <=n ; i++) {
-      for (int j = 1; j <=m ; j++) {
+      for (int j = 2; j <=m ; j++) {
         array[i][j] = array[i][j-1] + array[i-1][j];
       }
     }
@@ -44,7 +44,5 @@ public class Main {
         array[i][j] = 0;
       }
     }
-    array[0][0] = 1;
   }
-
 }
