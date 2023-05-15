@@ -1,6 +1,7 @@
 package classworks.lesson8_20230502;
 
 public class Item {
+
   private String name;
   private int weight;
   private int price;
@@ -23,12 +24,4 @@ public class Item {
     return price;
   }
 
-  @Override
-  public String toString() {
-    return "Item{" +
-            "name='" + name + '\'' +
-            ", weight=" + weight +
-            ", price=" + price +
-            '}';
-  }
 }

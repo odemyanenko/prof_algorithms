@@ -2,14 +2,12 @@ package homeworks.hw8_20230502;
 
 public class Main {
   public static void main(String[] args) {
-    int n = 5;
+    int n = 4;
     int m = 5;
 
     int[][] matrixPath = new int[n + 1][m + 1];
 
     setStartValues(n, m, matrixPath);
-    System.out.println("After Start Values");
-    printMatrix(n, m, matrixPath);
     fillPath(n, m, matrixPath);
     System.out.println("After Fill Path");
     printMatrix(n, m, matrixPath);
@@ -32,7 +30,7 @@ public class Main {
   private static void printMatrix(int n, int m, int[][] array) {
     for (int i = 0; i <= n; i++) {
       for (int j = 0; j <= m; j++) {
-        System.out.printf("%-2d ", array[i][j]);
+        System.out.printf("%-3d ", array[i][j]);
       }
       System.out.println();
     }
