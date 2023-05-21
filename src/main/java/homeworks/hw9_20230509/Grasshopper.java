@@ -1,4 +1,4 @@
-package homeworks.hw9_20230514;
+package homeworks.hw9_20230509;
 
 /*
 Задача "Кузнечик и кувшинки"

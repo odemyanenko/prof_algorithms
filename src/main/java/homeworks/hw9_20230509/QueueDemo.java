@@ -1,6 +1,4 @@
-package homeworks.hw9_20230514;
-
-import java.util.Arrays;
+package homeworks.hw9_20230509;
 
 public class QueueDemo {
   public static void main(String[] args) {
