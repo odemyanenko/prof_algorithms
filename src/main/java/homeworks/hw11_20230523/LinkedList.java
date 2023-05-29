@@ -1,8 +1,12 @@
-package homeworks.hw10_20230516;
+package homeworks.hw11_20230523;
 
 public class LinkedList {
 
   private Node head;
+
+  public Node getHead() {
+    return head;
+  }
 
   public void pushToHead(int data) {
     Node temp = new Node();
@@ -62,7 +66,7 @@ public class LinkedList {
     return temp.value;
   }
 
-  public int removeLast(){
+  public int removeLast() {
     if (size() == 0) {
       System.out.println("Linked list is Empty!");
       return Integer.MIN_VALUE;
@@ -84,7 +88,7 @@ public class LinkedList {
     return value;
   }
 
-  public int remove(int index){
+  public int remove(int index) {
     if (index < 0 || index >= size()) {
       System.out.println("Index out of bound!");
       return Integer.MIN_VALUE;
@@ -92,7 +96,7 @@ public class LinkedList {
 
     if (index == 0) {
       return removeFirst();
-    } else if (index == size() - 1){
+    } else if (index == size() - 1) {
       return removeLast();
     } else {
 
@@ -113,6 +117,7 @@ public class LinkedList {
 
     return Integer.MIN_VALUE;
   }
+
   public int get(int index) {
     if (index <= 0 || index > size()) {
       System.out.println("Index out of bound!");
@@ -166,6 +171,61 @@ public class LinkedList {
 
       node = node.next;
     }
+  }
+
+  public Node deleteNFromEndElement(int index) {
+    if (index <= 0 || index >= size()) {
+      System.out.println("Index out of bound!");
+      return null;
+    }
+    Node prev, temp;
+
+    prev = head;
+    temp = head;
+    int count = 0;
+    int indexPrev = 0;
+
+    while (temp.next != null) {
+      if (count == index) {
+        prev = temp;
+        indexPrev += count;
+        count = 0;
+      }
+      count++;
+      temp = temp.next;
+    }
+
+    if (count == index) {
+      remove(indexPrev);
+    } else {
+      remove(indexPrev - count);
+    }
+    return head;
+  }
+
+  private static Node getNexNode(LinkedList list, LinkedList.Node node) {
+    list.pushToTail(node.value);
+    node = node.next;
+    return node;
+  }
+
+  public static Node mergeLists(LinkedList destination, LinkedList source1, LinkedList source2) {
+    Node temp1 = source1.getHead();
+    Node temp2 = source2.getHead();
+
+    while (temp1 != null || temp2 != null) {
+      if (temp2 == null) {
+        temp1 = getNexNode(destination, temp1);
+      } else if (temp1 == null) {
+        temp2 = getNexNode(destination, temp2);
+      } else if (temp1.value < temp2.value) {
+        temp1 = getNexNode(destination, temp1);
+      } else {
+        temp2 = getNexNode(destination, temp2);
+      }
+    }
+
+    return destination.getHead();
   }
 
   class Node {
