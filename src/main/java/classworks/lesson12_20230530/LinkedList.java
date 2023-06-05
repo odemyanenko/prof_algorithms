@@ -1,12 +1,8 @@
-package classworks.lesson11_20230523;
+package classworks.lesson12_20230530;
 
 public class LinkedList {
 
   private Node head;
-
-  public Node getHead() {
-    return head;
-  }
 
   public void pushToHead(int data) {
     Node temp = new Node();
@@ -145,8 +141,13 @@ public class LinkedList {
     p.next = t.next;
   }
 
-  public class Node {
-    public int value;
-    public Node next;
+  public Node getHead() {
+    return head;
   }
+
+  class Node {
+    int value;
+    Node next;
+  }
+
 }

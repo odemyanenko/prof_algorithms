@@ -1,4 +1,4 @@
-package classworks.lesson11_20230523;
+package classworks.lesson12_20230530;
 
 import java.util.*;
 
@@ -16,27 +16,32 @@ public class Main2 {
     stations.put(5, new HashSet<>(List.of("CA", "AZ")));
     // Ответ - итоговый набор станций
     Set<Integer> finalStations = new HashSet<>();
-    while (!statesNeeded.isEmpty()){
+    while (!statesNeeded.isEmpty()) {
       Set<String> statesCovered = new HashSet<>();    // Текущее покрытие штатов
       int bestStation = 0;    // Станция, которая покрывает больше всего штатов, не входящих в statesCovered
-      for (Map.Entry<Integer, Set<String>> entry: stations.entrySet()) {
-
-        Set<String> covered = intersect(statesNeeded, entry.getValue());
-        if (covered.size() > statesCovered.size()){
+      for (Map.Entry<Integer, Set<String>> entry : stations.entrySet()) {
+        // Перебираем все станции
+        Set<String> covered = intersect(statesNeeded, entry.getValue());;
+        if (covered.size() > statesCovered.size()) {
           bestStation = entry.getKey();
           statesCovered = covered;
         }
       }
-      statesNeeded.retainAll(statesCovered);
+      statesNeeded.removeAll(statesCovered);
       finalStations.add(bestStation);
     }
     System.out.println(finalStations);
   }
 
-  private  static Set<String> intersect(Set<String> set1, Set<String > set2){
-    Set<String> set = new HashSet<>(set1);
-    set.retainAll(set2);
-
+  private static Set<String> intersect(Set<String> set1, Set<String> set2) {
+//        Set<String> set = new HashSet<>(set1);
+//        set.retainAll(set2);
+    Set<String> set = new HashSet<>();
+    set1.forEach(e -> {
+      if(set2.contains(e)) {
+        set.add(e);
+      }
+    });
     return set;
   }
 
