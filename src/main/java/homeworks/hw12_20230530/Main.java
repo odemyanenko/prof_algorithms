@@ -20,7 +20,7 @@ public class Main {
 
   private static void printVisitedNodes(List<Node> visitedNodes) {
     System.out.println("Print visited point: ");
-    visitedNodes.stream().forEach(e -> {
+    visitedNodes.forEach(e -> {
       System.out.println(e.getNumber() + " : " + e.getWeight());
     });
   }
