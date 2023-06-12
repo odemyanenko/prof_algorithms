@@ -1,8 +1,7 @@
 package homeworks.hw13_20230606;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 // BST
 public class Tree {
@@ -95,11 +94,12 @@ public class Tree {
 //    }
 //  }
 
-  public int getHeight(){
+  public int getHeight() {
     return getMaxHeight(root);
   }
-  private int getMaxHeight(Node node){
-    if (node == null){
+
+  private int getMaxHeight(Node node) {
+    if (node == null) {
       return 0;
     }
 
@@ -109,9 +109,76 @@ public class Tree {
     return Math.max(leftHeight, rightHeight) + 1;
   }
 
+  public void buildTreeFromArray(Integer[] arr) {
+    if (arr == null || arr.length == 0) {
+      return;
+    }
+
+    root = new Node(arr[0]);
+
+    Queue<Node> queue = new LinkedList<>();
+    queue.offer(root);
+
+    int i = 1;
+    while (i < arr.length) {
+      Node current = queue.poll();
+
+      if (arr[i] != null) {
+        current.leftChild = new Node(arr[i]);
+        queue.offer(current.leftChild);
+      }
+      i++;
+
+      if (i < arr.length && arr[i] != null) {
+        current.rightChild = new Node(arr[i]);
+        queue.offer(current.rightChild);
+      }
+      i++;
+    }
+  }
+
+  public void fixTreeFromArray() {
+    if (root == null) {
+      return;
+    }
+    List<Integer> values = new ArrayList<>();
+    valuesTreeInOrder(root, values);
+    Collections.sort(values);
+    rebuildTree(root, values, new AtomicInteger(0));
+  }
+
+  private static void valuesTreeInOrder(Node node, List<Integer> values) {
+    if (node == null) {
+      return;
+    }
+
+    valuesTreeInOrder(node.leftChild, values);
+    values.add(node.value);
+    valuesTreeInOrder(node.rightChild, values);
+  }
+
+  private static void rebuildTree(Node node, List<Integer> values, AtomicInteger index) {
+    if (node == null) {
+      return;
+    }
+
+    rebuildTree(node.leftChild, values, index);
+    node.value = values.get(index.getAndIncrement());
+    rebuildTree(node.rightChild, values, index);
+  }
+
   private class Node {
     int value;
     Node leftChild, rightChild;
+
+    public Node() {
+    }
+
+    public Node(int value) {
+      this.value = value;
+      leftChild = null;
+      rightChild = null;
+    }
   }
 
 }
