@@ -147,7 +147,7 @@ public class Tree {
     rebuildTree(root, values, new AtomicInteger(0));
   }
 
-  private static void valuesTreeInOrder(Node node, List<Integer> values) {
+  private void valuesTreeInOrder(Node node, List<Integer> values) {
     if (node == null) {
       return;
     }
@@ -157,7 +157,7 @@ public class Tree {
     valuesTreeInOrder(node.rightChild, values);
   }
 
-  private static void rebuildTree(Node node, List<Integer> values, AtomicInteger index) {
+  private void rebuildTree(Node node, List<Integer> values, AtomicInteger index) {
     if (node == null) {
       return;
     }
