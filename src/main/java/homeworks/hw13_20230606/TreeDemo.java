@@ -1,9 +1,6 @@
-package classworks.lesson13_20230606;
+package homeworks.hw13_20230606;
 
-import classworks.lesson13_20230606.Tree;
-
-public class Main2 {
-
+public class TreeDemo {
   public static void main(String[] args) {
     Tree tree = new Tree();
     tree.add(10);
@@ -13,8 +10,6 @@ public class Main2 {
     tree.add(5);
     tree.add(20);
     tree.print();
-    System.out.println();
-    tree.pass();
+    System.out.println("Height of Tree: " + tree.getHeight());
   }
-
 }
