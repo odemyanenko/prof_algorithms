@@ -176,8 +176,8 @@ public class Tree {
 
     public Node(int value) {
       this.value = value;
-      leftChild = null;
-      rightChild = null;
+      this.leftChild = null;
+      this.rightChild = null;
     }
   }
 
