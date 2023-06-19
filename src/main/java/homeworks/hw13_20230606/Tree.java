@@ -60,22 +60,39 @@ public class Tree {
 
   // Обход в глубину итерационный
   private void pass() {
-    Stack<Node> stack = new Stack<>();
+    if (root == null)
+      return;
 
+    Stack<Node> stack = new Stack<>();
     Node temp = root;
 
     while (temp != null || !stack.isEmpty()) {
-      while (temp != null) {
+      if (temp != null) {
         stack.push(temp);
         temp = temp.leftChild;
+      } else {
+        temp = stack.pop();
+        System.out.print(temp.value + " ");
+        temp = temp.rightChild;
       }
-
-      temp = stack.pop();
-      System.out.print(temp.value + " ");
-
-      temp = temp.rightChild;
     }
     System.out.println();
+//    Stack<Node> stack = new Stack<>();
+//
+//    Node temp = root;
+//
+//    while (temp != null || !stack.isEmpty()) {
+//      while (temp != null) {
+//        stack.push(temp);
+//        temp = temp.leftChild;
+//      }
+//
+//      temp = stack.pop();
+//      System.out.print(temp.value + " ");
+//
+//      temp = temp.rightChild;
+//    }
+//    System.out.println();
   }
 
   // Обход в ширину
