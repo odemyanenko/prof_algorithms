@@ -14,6 +14,7 @@ public class ArrayPaarSearch {
     System.out.println("----------------------------------");
     System.out.println(searchNumber2(array));
     System.out.println(searchNumber2(array2));
+    System.out.println(3^3^4);
   }
 
   private static int searchNumber(int[] array) {

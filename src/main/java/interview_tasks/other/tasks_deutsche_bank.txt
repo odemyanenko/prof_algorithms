@@ -1,0 +1,46 @@
+Certainly! Here are some coding tasks suitable for a junior Java developer interview at Deutsche Bank. These tasks cover various aspects of Java development:
+
+String Manipulation:
+Write a Java program to reverse a string without using the StringBuilder or StringBuffer classes.
+
+Array Operations:
+Implement a method to find the maximum and minimum values in an array of integers without using any library functions.
+
+Data Structures:
+Create a simple linked list data structure with basic operations like insert, delete, and search.
+
+File Operations:
+Write a program that reads a text file, counts the occurrences of each word, and prints the results.
+
+Multithreading:
+Implement a simple producer-consumer problem using Java threads and synchronization.
+
+Database Operations:
+Connect to a MySQL database using Java, retrieve data from a table, and display it.
+
+Error Handling:
+Develop a program that handles exceptions gracefully, logging error messages and continuing execution.
+
+Sorting and Searching:
+Implement a sorting algorithm (e.g., bubble sort or quicksort) and a searching algorithm (e.g., binary search).
+
+Object-Oriented Programming (OOP):
+Create a class hierarchy representing different types of bank accounts (e.g., savings, checking) with common and specific attributes and methods.
+
+Web Services:
+Create a simple RESTful web service using a Java framework like Spring Boot.
+
+Unit Testing:
+Write JUnit test cases for a Java class or method and ensure that it covers various scenarios and edge cases.
+
+Design Patterns:
+Implement the Singleton design pattern in Java to ensure that a class has only one instance.
+
+Algorithm Analysis:
+Analyze the time complexity of a given algorithm and suggest improvements for optimization.
+
+API Integration:
+Integrate with a public API (e.g., weather data or currency conversion) using HTTP requests in Java.
+
+Concurrency:
+Develop a multi-threaded program that simulates a race condition and apply synchronization techniques to resolve it.

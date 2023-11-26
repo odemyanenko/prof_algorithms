@@ -1,0 +1,13 @@
+To write a program that reads a text file, counts the occurrences of each word, and prints the results in Java, you can follow these steps:
+
+Read the Text File:
+Open and read the text file line by line. You can use a BufferedReader to efficiently read the file.
+
+Tokenize the Text:
+Tokenize each line into words. You can use regular expressions or a simple split operation on spaces to extract words. Convert words to lowercase to ensure case-insensitive word counting.
+
+Count Word Occurrences:
+Use a data structure (e.g., a HashMap<String, Integer>) to keep track of word occurrences. Loop through the words and increment their count in the map.
+
+Print the Results:
+After reading the entire file, iterate through the map and print each word along with its count.
