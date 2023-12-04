@@ -1,0 +1,6 @@
+GitHub Links
+1. https://github.com/codedecode25/design-patterns/tree/master/src
+2. https://github.com/jiangbaojun/designPatternDemo/tree/main
+
+YouTube Links
+1. https://www.youtube.com/watch?v=QfnZGam76kE
